@@ -60,9 +60,15 @@ body{
     }
 
     .header{
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-gap: 20px;
         background-color: $offwhite;
         grid-area: header;
         padding: 1em;
+        font-weight: 700;
+        padding: 1em 3em ;
+
 
         .top-section{
             display: grid;
@@ -72,12 +78,18 @@ body{
                 align-items: center;
                 gap: 10px;
 
+                svg{
+                    width: 2.5em;
+                }
+
                 input{
                     height: 2em;
                     border: none;
                     border-radius: 20px;
                     background-color: lightgray;
                     width: clamp(200px ,30vw, 500px);
+                    padding-left: 10px;
+                    font-size: 1.15em;
                 }
 
             }
@@ -86,13 +98,69 @@ body{
                 align-items: center;
                 justify-content: right;
                 gap: 20px;
-                font-weight: 700;
 
                 img{
                     width: 2.5em;
                     border: 2px solid black;
                     border-radius: 25px;
                 }
+            }
+        }
+
+        .bottom-section{
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            .left-side{
+                display: flex;
+                align-items: center;
+                gap: 15px;
+
+
+                img{
+                    width: 4em;
+                    border: 2px solid black;
+                    border-radius: 100px;
+                }
+                .greeting{
+                    display: grid;
+                    grid-template-columns: 1fr;
+                    .hi-wrapper{
+                        font-size: 0.8em;
+                    }
+                    .name-username-wrapper{
+                        font-size: 1.5em;
+                    }
+                }
+            }
+            .right-side{
+                display: flex;
+                justify-content: right;
+                align-items: center;
+                .buttons-wrapper{  
+                    display: flex;
+                    gap: 20px;
+                    
+                    .btn{
+                        width: 100px;
+                        background-color: $light-red;
+                        color: $offwhite;
+                        border: none;
+                        border-radius: 25px;
+                        padding: 10px;
+                        font-size: 1.25em;
+                        font-weight: 600;
+                        cursor: pointer;
+                        transition: 0.3s;
+
+                        &:hover{
+                            letter-spacing: 1px;
+                            box-shadow: -7px 5px 120px -44px rgba(0,0,0,0.75) inset;
+                            color: white;
+                        }
+                    }
+                }
+
+
             }
         }
     }

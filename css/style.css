@@ -49,9 +49,14 @@ body {
   margin-top: 1.5em;
 }
 .site-wrapper .header {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 20px;
   background-color: #edf2f4;
   grid-area: header;
   padding: 1em;
+  font-weight: 700;
+  padding: 1em 3em;
 }
 .site-wrapper .header .top-section {
   display: grid;
@@ -62,24 +67,78 @@ body {
   align-items: center;
   gap: 10px;
 }
+.site-wrapper .header .top-section .search-bar svg {
+  width: 2.5em;
+}
 .site-wrapper .header .top-section .search-bar input {
   height: 2em;
   border: none;
   border-radius: 20px;
   background-color: lightgray;
   width: clamp(200px, 30vw, 500px);
+  padding-left: 10px;
+  font-size: 1.15em;
 }
 .site-wrapper .header .top-section .account-info {
   display: flex;
   align-items: center;
   justify-content: right;
   gap: 20px;
-  font-weight: 700;
 }
 .site-wrapper .header .top-section .account-info img {
   width: 2.5em;
   border: 2px solid black;
   border-radius: 25px;
+}
+.site-wrapper .header .bottom-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.site-wrapper .header .bottom-section .left-side {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+.site-wrapper .header .bottom-section .left-side img {
+  width: 4em;
+  border: 2px solid black;
+  border-radius: 100px;
+}
+.site-wrapper .header .bottom-section .left-side .greeting {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+.site-wrapper .header .bottom-section .left-side .greeting .hi-wrapper {
+  font-size: 0.8em;
+}
+.site-wrapper .header .bottom-section .left-side .greeting .name-username-wrapper {
+  font-size: 1.5em;
+}
+.site-wrapper .header .bottom-section .right-side {
+  display: flex;
+  justify-content: right;
+  align-items: center;
+}
+.site-wrapper .header .bottom-section .right-side .buttons-wrapper {
+  display: flex;
+  gap: 20px;
+}
+.site-wrapper .header .bottom-section .right-side .buttons-wrapper .btn {
+  width: 100px;
+  background-color: #ef233c;
+  color: #edf2f4;
+  border: none;
+  border-radius: 25px;
+  padding: 10px;
+  font-size: 1.25em;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.site-wrapper .header .bottom-section .right-side .buttons-wrapper .btn:hover {
+  letter-spacing: 1px;
+  box-shadow: -7px 5px 120px -44px rgba(0, 0, 0, 0.75) inset;
+  color: white;
 }
 .site-wrapper .content {
   background-color: #8d99ae;
