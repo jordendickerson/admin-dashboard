@@ -11,10 +11,9 @@ body{
 .site-wrapper{
     display: grid;
     grid-template-columns: 1fr 5fr;
+    grid-template-rows: 1fr 5fr;
     grid-template-areas: 
         "sidebar header"
-        "sidebar content"
-        "sidebar content"
         "sidebar content"
     ;
     height: 100vh;
@@ -63,6 +62,39 @@ body{
     .header{
         background-color: $offwhite;
         grid-area: header;
+        padding: 1em;
+
+        .top-section{
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            .search-bar{
+                display: flex;
+                align-items: center;
+                gap: 10px;
+
+                input{
+                    height: 2em;
+                    border: none;
+                    border-radius: 20px;
+                    background-color: lightgray;
+                    width: clamp(200px ,30vw, 500px);
+                }
+
+            }
+            .account-info{
+                display: flex;
+                align-items: center;
+                justify-content: right;
+                gap: 20px;
+                font-weight: 700;
+
+                img{
+                    width: 2.5em;
+                    border: 2px solid black;
+                    border-radius: 25px;
+                }
+            }
+        }
     }
 
     .content{

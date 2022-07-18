@@ -15,7 +15,8 @@ body {
 .site-wrapper {
   display: grid;
   grid-template-columns: 1fr 5fr;
-  grid-template-areas: "sidebar header" "sidebar content" "sidebar content" "sidebar content";
+  grid-template-rows: 1fr 5fr;
+  grid-template-areas: "sidebar header" "sidebar content";
   height: 100vh;
 }
 .site-wrapper .sidebar {
@@ -50,6 +51,35 @@ body {
 .site-wrapper .header {
   background-color: #edf2f4;
   grid-area: header;
+  padding: 1em;
+}
+.site-wrapper .header .top-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.site-wrapper .header .top-section .search-bar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.site-wrapper .header .top-section .search-bar input {
+  height: 2em;
+  border: none;
+  border-radius: 20px;
+  background-color: lightgray;
+  width: clamp(200px, 30vw, 500px);
+}
+.site-wrapper .header .top-section .account-info {
+  display: flex;
+  align-items: center;
+  justify-content: right;
+  gap: 20px;
+  font-weight: 700;
+}
+.site-wrapper .header .top-section .account-info img {
+  width: 2.5em;
+  border: 2px solid black;
+  border-radius: 25px;
 }
 .site-wrapper .content {
   background-color: #8d99ae;
