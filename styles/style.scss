@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 @import "./variables.scss";
-@import "./text-presets.scss";
+@import "./presets.scss";
 
 body{
     padding: 0;
@@ -18,7 +18,7 @@ body{
     ;
     height: 100vh;
 
-
+    //SIDEBAR
     .sidebar{
         background-color: $light-red;
         color: $offwhite;
@@ -58,7 +58,7 @@ body{
             margin-top: 1.5em;
         }
     }
-
+    //HEADER
     .header{
         display: grid;
         grid-template-columns: 1fr;
@@ -164,10 +164,100 @@ body{
             }
         }
     }
-
+    //CONTENT
     .content{
+        display: grid;
+        grid-template-columns: 3fr 1fr;
+        grid-template-areas: 
+        "p a"
+        "p t"
+        ;
+        grid-gap: 20px;
         background-color: $light-gray;
         grid-area: content;
         box-shadow: 10px 10px 33px -15px rgba(0,0,0,0.75) inset;
+        padding: 50px 40px;
+
+        //PROJECTS
+        .projects{
+            grid-area: p;
+            display: flex;
+            flex-direction: column;
+
+            .projects-wrapper{
+                display: grid;
+                grid-template-columns: repeat(auto-fill, minmax(330px, 3fr));
+                grid-gap: 15px;
+
+                .project{
+                    background-color: $offwhite;
+                    border-left: 10px $dark-gray solid;
+                    border-radius: 10px;
+                    padding: 15px;
+                    display: flex;
+                    flex-direction: column;
+
+                    .title{
+                        font-size: 1.3em;
+                    }
+                    .description{
+                        color: rgb(75, 75, 75);
+                    }
+                    .icons{
+                        margin: 10px 5px;
+                        display: flex;
+                        justify-content: right;
+                        gap: 1em;
+                        
+                        svg{
+                            cursor: pointer;
+                        }
+                    }
+                }
+            }
+            
+
+        }
+
+
+        .announcements{
+            grid-area: a;
+        }
+
+        .trending{
+            grid-area: t;
+        }
+
+        //SIDE CONTAINERS
+        .side-container{
+            background-color: $offwhite;
+            padding: 20px 15px;
+            border-radius: 10px;
+
+            .break{
+                border: 1px solid $light-gray;
+            }
+
+            .side-container-item{
+                padding: 5px;
+                font-size: .8em;
+                .item-header{
+                    font-size: 1em;
+                    font-weight: 600;
+                }
+                .profile-wrapper{
+                    display: flex;
+                    align-items: center;
+                    gap: 10px;
+                    img{
+                        width: 2.5em;
+                        border: 2px solid black;
+                        border-radius: 25px;
+                    }
+                }
+                
+            }
+            
+        }
     }
 }

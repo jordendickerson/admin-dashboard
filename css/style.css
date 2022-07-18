@@ -6,6 +6,11 @@
   cursor: pointer;
 }
 
+.section-label {
+  font-size: 1.2em;
+  font-weight: 600;
+}
+
 body {
   padding: 0;
   margin: 0;
@@ -141,7 +146,77 @@ body {
   color: white;
 }
 .site-wrapper .content {
-  background-color: #8d99ae;
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  grid-template-areas: "p a" "p t";
+  grid-gap: 20px;
+  background-color: #ccd7e9;
   grid-area: content;
   box-shadow: 10px 10px 33px -15px rgba(0, 0, 0, 0.75) inset;
+  padding: 50px 40px;
+}
+.site-wrapper .content .projects {
+  grid-area: p;
+  display: flex;
+  flex-direction: column;
+}
+.site-wrapper .content .projects .projects-wrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(330px, 3fr));
+  grid-gap: 15px;
+}
+.site-wrapper .content .projects .projects-wrapper .project {
+  background-color: #edf2f4;
+  border-left: 10px #2b2d42 solid;
+  border-radius: 10px;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+}
+.site-wrapper .content .projects .projects-wrapper .project .title {
+  font-size: 1.3em;
+}
+.site-wrapper .content .projects .projects-wrapper .project .description {
+  color: rgb(75, 75, 75);
+}
+.site-wrapper .content .projects .projects-wrapper .project .icons {
+  margin: 10px 5px;
+  display: flex;
+  justify-content: right;
+  gap: 1em;
+}
+.site-wrapper .content .projects .projects-wrapper .project .icons svg {
+  cursor: pointer;
+}
+.site-wrapper .content .announcements {
+  grid-area: a;
+}
+.site-wrapper .content .trending {
+  grid-area: t;
+}
+.site-wrapper .content .side-container {
+  background-color: #edf2f4;
+  padding: 20px 15px;
+  border-radius: 10px;
+}
+.site-wrapper .content .side-container .break {
+  border: 1px solid #ccd7e9;
+}
+.site-wrapper .content .side-container .side-container-item {
+  padding: 5px;
+  font-size: 0.8em;
+}
+.site-wrapper .content .side-container .side-container-item .item-header {
+  font-size: 1em;
+  font-weight: 600;
+}
+.site-wrapper .content .side-container .side-container-item .profile-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.site-wrapper .content .side-container .side-container-item .profile-wrapper img {
+  width: 2.5em;
+  border: 2px solid black;
+  border-radius: 25px;
 }/*# sourceMappingURL=style.css.map */
